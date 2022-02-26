@@ -1,5 +1,24 @@
 # nuxt_template
 
+This nuxt_template is designed as a spring board to boot strap a vairety of profesional applications using AWS Amplify.  There is a lot of set up involved in amplify due to the neccessity of each project being linked to a specific stack (project) on a specific AWS account.  Amplify is great, but this setup requirement sort of breaks the modularity of templates associated with it. Which is unfortunante as most users using Amplify will want:
+    * Authentication 
+      * Cognito
+      * A login page
+      * A logut page
+      * A signup  page
+      * auth routing
+      * ability to locally test
+      * ability to work on front end before launching the backend
+    * Graph abstraction
+      * Store
+    * Image optimization
+
+## Things that must be changed in this template when the backend is created.
+
+1. ./src/login.vue
+  * need to impliment "signInWith365" method.
+    
+
 ## Build Setup
 
 ```bash

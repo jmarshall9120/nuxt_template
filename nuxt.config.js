@@ -45,7 +45,18 @@ export default {
     '@nuxtjs/pwa',
     // https://image.nuxtjs.org
     '@nuxt/image',
+    // https://auth.nuxtjs.org
+    // '@nuxtjs/auth-next',
   ],
+
+  router: {
+    middleware: 'auth',
+    // redirect: {
+    //   login: '/login',
+    //   logout: '/logout',
+    //   home: false,
+    // },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -59,6 +70,16 @@ export default {
       lang: 'en',
     },
   },
+
+  //Auth module configuration: https://auth.nuxtjs.org/guide/scheme
+  // auth: {
+  //   strategies: {
+  //     amplifyManual: {
+  //       scheme: '~/schemes/AmplifyManual',
+  //       /* ... */
+  //     },
+  //   },
+  // },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
