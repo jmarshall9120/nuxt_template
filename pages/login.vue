@@ -61,7 +61,7 @@
                 </v-text-field>
               </v-list-item>
               <v-list-item>
-                <v-btn @click="signInWithManual">login</v-btn>
+                <v-btn @click="signInWithCredentials">login</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn @click="showManualLogin = false">close</v-btn>
               </v-list-item>
@@ -96,25 +96,27 @@ export default {
     signInWith365() {
       console.log('365 login not implimented')
     },
-    async signInWithManual() {
+    async signInWithCredentials() {
+      try {
+        const response = await this.$store.dispatch(
+          'auth/amplifySignIn_WithCredentials',
+          this.login
+        )
+        if (response) {
+          console.log('response found')
+        }
+        // console.log(response)
+      } catch (err) {
+        // console.log(err)
+      }
       // try {
-      //   const response = await this.$store.dispatch(
-      //     'amplifySignIn_WithCredentials',
-      //     this.login
-      //   )
+      //   const response = await this.$auth.loginWith('amplifyManual', {
+      //     data: this.login,
+      //   })
       //   console.log(response)
       // } catch (err) {
       //   console.log(err)
       // }
-      // return
-      try {
-        const response = await this.$auth.loginWith('amplifyManual', {
-          data: this.login,
-        })
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-      }
     },
   },
 }

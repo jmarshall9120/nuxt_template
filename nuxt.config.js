@@ -50,7 +50,7 @@ export default {
   ],
 
   router: {
-    middleware: 'auth',
+    // middleware: 'auth',
     // redirect: {
     //   login: '/login',
     //   logout: '/logout',
